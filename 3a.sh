@@ -9,10 +9,8 @@ while read linia; do
 	debug $linia
 	desena=0;
 	unitat=0;
-	#for i in $(seq 0 $((${#linia} - 2)) ); do
-	#for (( i = 0; i < ${#linia} - 1 ; ++i )); do
 	for (( i = 0; i < ${#linia} - 1 && ( desena < 9 || unitat < 9 ); ++i )); do
-		#debug ${linia:$i:1}
+		debug ${linia:$i:1}
 		if [ ${linia:i:1} -gt $desena ]; then
 			desena=${linia:i:1};
 			unitat=0;
